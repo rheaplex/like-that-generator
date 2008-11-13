@@ -1,0 +1,47 @@
+String MODE = P2D;
+
+int KIND_COUNT = 3;
+
+class Form
+{
+	float size;
+	float x;
+	float y;
+	int kind;
+
+	Form ()
+	{
+		x = random (min_object_x, max_object_x); 
+		y = random (min_object_y, max_object_y); 
+		size = random (min_object_start_t, max_object_start_t);
+		kind = int (random (KIND_COUNT));
+	}
+
+	void draw ()
+	{
+		pushMatrix ();
+  		translate (x, y);
+		switch (kind)
+		{
+			case 0:
+			     ellipseMode (CENTER);
+	        	     ellipse (x, y, size, size);
+			     break;
+			case 1:
+			     rectMode (CENTER);
+	        	     rect (x, y, size, size);
+			     break;
+			case 2:
+			     // Triangle
+			     float halfSize = size / 2.0;
+			     beginShape ();
+			     vertex (-halfSize, -halfSize);
+			     vertex (0.0, halfSize);
+			     vertex (halfSize, -halfSize);
+			     endShape ();
+			     break;
+		}
+  		popMatrix ();
+	}
+}
+

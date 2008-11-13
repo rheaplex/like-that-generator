@@ -1,0 +1,24 @@
+String MODE = P2D;
+
+class Form
+{
+	float size;
+	float x;
+	float y;
+
+	Form ()
+	{
+		x = random (min_object_x, max_object_x); 
+		y = random (min_object_y, max_object_y); 
+		size = random (min_object_start_t, max_object_start_t);
+	}
+
+	void draw ()
+	{
+		pushMatrix ();
+  		translate (x, y);
+		ellipseMode (CENTER);
+  		ellipse (x, y, size, size);
+  		popMatrix ();
+	}
+}

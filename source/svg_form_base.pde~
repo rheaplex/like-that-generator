@@ -1,0 +1,20 @@
+
+String[] formSVGNames = null;
+SVG[] formSvgs = null;
+
+
+class SvgForm
+{
+	void loadSVGs ()
+	{
+		formSVGs = new SVG[formSVGNames.length];
+	}
+
+	SVG randomSVG ()
+	{
+		if (formSVGs == null)
+		{
+			loadSVGs ();
+		}
+	}
+}

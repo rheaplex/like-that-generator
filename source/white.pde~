@@ -1,0 +1,11 @@
+class Appearance
+{
+	Appearance ()
+	{}	
+
+	void draw (Form f)
+	{
+		fill (220);
+		f.draw ();
+	}
+}
